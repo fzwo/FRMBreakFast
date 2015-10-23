@@ -14,9 +14,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@interface IDEBreakpointManager : NSObject
+@property(nonatomic) BOOL breakpointsActivated;
+@end
+
 @interface IDEBreakpoint : NSObject
+@property(retain) id /*<IDEInternalBreakpointDelegate>*/ delegate;
 @property BOOL continueAfterRunningActions;
 @property(copy) NSArray *actions;
+@property(nonatomic) BOOL shouldBeEnabled;
 @end
 
 @interface IDEFileBreakpoint : IDEBreakpoint
@@ -44,17 +50,17 @@
 @interface DVTTextSidebarView : NSRulerView
 @property double foldbarWidth;
 - (DVTAnnotation *)_clickedAnnotation:(NSEvent *)event;
-
+typedef void(^getParaRectBlock)(unsigned long long, CGRect *, CGRect *, DVTTextAnnotation *);
 - (void)_drawSidebarMarkersForAnnotations:(NSArray *)annotations
                                 atIndexes:(NSIndexSet *)indexes
                                  textView:(id)textView
-                         getParaRectBlock:(id)getParaRect;
+                         getParaRectBlock:(getParaRectBlock)getParaRect;
 - (void)_drawLineNumbersInSidebarRect:(CGRect)sidebarRect
                         foldedIndexes:(unsigned long long *)foldedIndexes
                                 count:(unsigned long long)count
                         linesToInvert:(id)linesToInvert
                        linesToReplace:(id)linesToReplace
-                     getParaRectBlock:(id)getParaRect;
+                     getParaRectBlock:(getParaRectBlock)getParaRect;
 - (DVTAnnotation *)annotationAtSidebarPoint:(struct CGPoint)point;
 - (void)getParagraphRect:(struct CGRect *)paragraphRect
            firstLineRect:(struct CGRect *)firstLineRect

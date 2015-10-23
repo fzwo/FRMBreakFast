@@ -87,7 +87,7 @@
 - (void)frm_drawSidebarMarkersForAnnotations:(NSArray *)annotations
                                    atIndexes:(NSIndexSet *)indexes
                                     textView:(id)textView
-                            getParaRectBlock:(id)getParagraphRect
+                            getParaRectBlock:(getParaRectBlock)getParagraphRect
 {
     NSMutableIndexSet *unhandledAnnotationsIndexes = [NSMutableIndexSet indexSet];
     NSUInteger i = 0;
@@ -102,10 +102,15 @@
             CGRect paragraphRect;
             CGRect firstLineRect;
             [self getParagraphRect:&paragraphRect firstLineRect:&firstLineRect forLineNumber:startingLineNumber];
+            
+            //correct rects for unsaved edits
+            NSRange paragraphRange = breakpointAnnotation.paragraphRange;
+            getParagraphRect(paragraphRange.location + 1, &paragraphRect, &firstLineRect, nil);
+            
             //draw
             NSBezierPath *markerPath = [self markerPathForBreakpointAnnotation:breakpointAnnotation inRect:firstLineRect];
-            NSColor *fillColor = [NSColor orangeColor];
-            NSColor *strokeColor = [NSColor redColor];
+            NSColor *fillColor = [self colorForBreakpointAnnotation:breakpointAnnotation];
+            NSColor *strokeColor = fillColor;
             [fillColor setFill];
             [strokeColor setStroke];
             [markerPath fill];
@@ -116,9 +121,10 @@
         }
         i++;
     }
+    
     //let original implementation handle all unhandled annotations
     [self frm_drawSidebarMarkersForAnnotations:annotations atIndexes:unhandledAnnotationsIndexes textView:textView getParaRectBlock:getParagraphRect];
-
+    
     //ensure that line numbers are drawn on top of sidebar annotations
     [self _drawLineNumbersInSidebarRect:[self sidebarRect] foldedIndexes:nil count:0 linesToInvert:nil linesToReplace:nil getParaRectBlock:getParagraphRect];
 }
@@ -146,6 +152,45 @@
     [markerPath lineToPoint: NSMakePoint(right, top)];
     [markerPath lineToPoint: NSMakePoint(left, top)];
     return markerPath;
+}
+
+
+- (NSColor *)colorForBreakpointAnnotation:(DBGBreakpointAnnotation *)annotation
+{
+    IDEFileBreakpoint *breakpoint = (IDEFileBreakpoint *)[annotation representedObject];
+    BOOL breakpointsActive = YES;
+    if ([breakpoint.delegate isKindOfClass:IDEBreakpointManager.class]) {
+        breakpointsActive = [(IDEBreakpointManager *)breakpoint.delegate breakpointsActivated];
+    }
+    BOOL enabled = breakpoint.shouldBeEnabled;
+    BOOL hasActions = breakpoint.actions.count > 0;
+    
+    NSColor *color;
+    if (!breakpointsActive) {
+        if (enabled) {
+            color = [NSColor colorWithCalibratedRed:0.541 green:0.549 blue:0.561 alpha:1.000];
+        }
+        else {
+            color = [NSColor colorWithCalibratedRed:0.765 green:0.773 blue:0.780 alpha:1.000];
+        }
+    }
+    else if (hasActions) {
+        if (enabled) {
+            color = [NSColor colorWithCalibratedRed:0.661 green:0.254 blue:0.698 alpha:1];
+        }
+        else {
+            color = [NSColor colorWithCalibratedRed:0.866 green:0.712 blue:0.879 alpha:1];
+        }
+    }
+    else {
+        if (enabled) {
+            color = [NSColor colorWithCalibratedRed:0.255 green:0.443 blue:0.698 alpha:1.000];
+        }
+        else {
+            color = [NSColor colorWithCalibratedRed:0.710 green:0.792 blue:0.878 alpha:1.000];
+        }
+    }
+    return color;
 }
 
 
