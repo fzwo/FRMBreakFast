@@ -12,6 +12,8 @@
 		1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */; };
 		1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */; };
 		1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */; };
+		1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		1F8A7BD31BD7A13600C252E3 /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
 		1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
 		1F8A7BD61BD7A13600C252E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8A7BDC1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTextSidebarView+FRMBreakFastAdditions.h"; sourceTree = "<group>"; };
+		1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTTextSidebarView+FRMBreakFastAdditions.m"; sourceTree = "<group>"; };
+		1F8A7BDF1BD8D1F600C252E3 /* FRMXcodeHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRMXcodeHeaders.h; sourceTree = "<group>"; };
+		1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../SharedFrameworks/DVTKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			files = (
 				1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */,
 				1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */,
+				1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,7 @@
 		1F8A7BC71BD7A13600C252E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */,
 				1F8A7BC81BD7A13600C252E3 /* AppKit.framework */,
 				1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */,
 			);
@@ -70,6 +78,9 @@
 			children = (
 				1F8A7BD01BD7A13600C252E3 /* FRMBreakFast.h */,
 				1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */,
+				1F8A7BDC1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.h */,
+				1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */,
+				1F8A7BDF1BD8D1F600C252E3 /* FRMXcodeHeaders.h */,
 				1F8A7BD31BD7A13600C252E3 /* NSObject_Extension.h */,
 				1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */,
 				1F8A7BD61BD7A13600C252E3 /* Info.plist */,
@@ -155,6 +166,7 @@
 			files = (
 				1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */,
 				1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */,
+				1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +252,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -255,6 +272,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
