@@ -25,6 +25,9 @@
 - (void)frm_mouseDown:(NSEvent *)event
 {
     [self logEvent:event];
+    id clickedAnnotation = [self _clickedAnnotation:event];
+    NSLog(@"FRMBreakFast: Clicked Annotation %@ (Class %@)", clickedAnnotation, [clickedAnnotation class]);
+    
     [self frm_mouseDown:event];
 }
 

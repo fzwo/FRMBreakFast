@@ -15,4 +15,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface DVTTextSidebarView : NSRulerView
+- (id)_clickedAnnotation:(NSEvent *)event;
 @end
