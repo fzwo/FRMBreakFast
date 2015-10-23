@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F28CB181BDA156400AC1EFE /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */; settings = {ASSET_TAGS = (); }; };
+		1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB191BDA200500AC1EFE /* IDEKit.framework */; settings = {ASSET_TAGS = (); }; };
 		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; settings = {ASSET_TAGS = (); }; };
 		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; settings = {ASSET_TAGS = (); }; };
 		1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../Frameworks/IDEFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		1F28CB191BDA200500AC1EFE /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../Frameworks/IDEKit.framework; sourceTree = DEVELOPER_DIR; };
 		1F8A7BC51BD7A13600C252E3 /* FRMBreakFast.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRMBreakFast.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8A7BC81BD7A13600C252E3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -46,6 +48,7 @@
 				1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */,
 				1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */,
 				1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */,
+				1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 		1F8A7BC71BD7A13600C252E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F28CB191BDA200500AC1EFE /* IDEKit.framework */,
 				1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */,
 				1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */,
 				1F8A7BC81BD7A13600C252E3 /* AppKit.framework */,

@@ -25,4 +25,12 @@
 
 @interface DVTTextSidebarView : NSRulerView
 - (DVTAnnotation *)_clickedAnnotation:(NSEvent *)event;
+- (DVTAnnotation *)annotationAtSidebarPoint:(struct CGPoint)point;
+@end
+
+@interface IDEBreakpointAction : NSObject
+@end
+
+@interface IDELogBreakpointAction : IDEBreakpointAction
+@property(copy) NSString *message; // @synthesize message=_message;
 @end

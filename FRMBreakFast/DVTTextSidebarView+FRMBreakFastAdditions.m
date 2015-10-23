@@ -35,6 +35,26 @@
     }
     
     [self frm_mouseDown:event];
+    NSLog(@"FRMBreakFast: After mouseDown");
+    
+    NSEventModifierFlags flags = event.modifierFlags & NSDeviceIndependentModifierFlagsMask;
+    BOOL commandKeyPressed = (flags & NSCommandKeyMask) != 0;
+    BOOL shiftKeyPressed = (flags & NSShiftKeyMask) != 0;
+    NSPoint locationInSelf = [self convertPoint:event.locationInWindow fromView:nil];
+
+    DVTAnnotation *annotation = [self annotationAtSidebarPoint:locationInSelf];
+    if (annotation && clickedAnnotation == nil && commandKeyPressed && shiftKeyPressed) {
+        if ([annotation.representedObject isKindOfClass:[IDEBreakpoint class]]) {
+            IDEBreakpoint *breakpoint = annotation.representedObject;
+            //set newly created breakpoint to continue after actions
+            breakpoint.continueAfterRunningActions = YES;
+            //add logging action to breakpoint
+            IDELogBreakpointAction *action = [[IDELogBreakpointAction alloc] init];
+            action.message = @"%B %H";
+            breakpoint.actions = @[action];
+            [self logBreakpoint:breakpoint];
+        }
+    }
 }
 
 
