@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; settings = {ASSET_TAGS = (); }; };
+		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; settings = {ASSET_TAGS = (); }; };
+		1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */; };
+		1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */; };
+		1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F8A7BC51BD7A13600C252E3 /* FRMBreakFast.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRMBreakFast.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8A7BC81BD7A13600C252E3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = FRMBreakFast.xcscheme; path = FRMBreakFast.xcodeproj/xcshareddata/xcschemes/FRMBreakFast.xcscheme; sourceTree = SOURCE_ROOT; };
+		1F8A7BD01BD7A13600C252E3 /* FRMBreakFast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRMBreakFast.h; sourceTree = "<group>"; };
+		1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRMBreakFast.m; sourceTree = "<group>"; };
+		1F8A7BD31BD7A13600C252E3 /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+		1F8A7BD61BD7A13600C252E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F8A7BC31BD7A13600C252E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */,
+				1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F8A7BBC1BD7A13600C252E3 = {
+			isa = PBXGroup;
+			children = (
+				1F8A7BCC1BD7A13600C252E3 /* FRMBreakFast */,
+				1F8A7BC71BD7A13600C252E3 /* Frameworks */,
+				1F8A7BC61BD7A13600C252E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F8A7BC61BD7A13600C252E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A7BC51BD7A13600C252E3 /* FRMBreakFast.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F8A7BC71BD7A13600C252E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A7BC81BD7A13600C252E3 /* AppKit.framework */,
+				1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F8A7BCC1BD7A13600C252E3 /* FRMBreakFast */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A7BD01BD7A13600C252E3 /* FRMBreakFast.h */,
+				1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */,
+				1F8A7BD31BD7A13600C252E3 /* NSObject_Extension.h */,
+				1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */,
+				1F8A7BD61BD7A13600C252E3 /* Info.plist */,
+				1F8A7BCD1BD7A13600C252E3 /* Supporting Files */,
+			);
+			path = FRMBreakFast;
+			sourceTree = "<group>";
+		};
+		1F8A7BCD1BD7A13600C252E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F8A7BC41BD7A13600C252E3 /* FRMBreakFast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8A7BD91BD7A13600C252E3 /* Build configuration list for PBXNativeTarget "FRMBreakFast" */;
+			buildPhases = (
+				1F8A7BC11BD7A13600C252E3 /* Sources */,
+				1F8A7BC21BD7A13600C252E3 /* Resources */,
+				1F8A7BC31BD7A13600C252E3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FRMBreakFast;
+			productName = FRMBreakFast;
+			productReference = 1F8A7BC51BD7A13600C252E3 /* FRMBreakFast.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F8A7BBD1BD7A13600C252E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Friedrich Markgraf";
+				TargetAttributes = {
+					1F8A7BC41BD7A13600C252E3 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 1F8A7BC01BD7A13600C252E3 /* Build configuration list for PBXProject "FRMBreakFast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F8A7BBC1BD7A13600C252E3;
+			productRefGroup = 1F8A7BC61BD7A13600C252E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F8A7BC41BD7A13600C252E3 /* FRMBreakFast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F8A7BC21BD7A13600C252E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F8A7BC11BD7A13600C252E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */,
+				1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F8A7BD71BD7A13600C252E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		1F8A7BD81BD7A13600C252E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		1F8A7BDA1BD7A13600C252E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = FRMBreakFast/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		1F8A7BDB1BD7A13600C252E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = FRMBreakFast/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F8A7BC01BD7A13600C252E3 /* Build configuration list for PBXProject "FRMBreakFast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A7BD71BD7A13600C252E3 /* Debug */,
+				1F8A7BD81BD7A13600C252E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8A7BD91BD7A13600C252E3 /* Build configuration list for PBXNativeTarget "FRMBreakFast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A7BDA1BD7A13600C252E3 /* Debug */,
+				1F8A7BDB1BD7A13600C252E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F8A7BBD1BD7A13600C252E3 /* Project object */;
+}
