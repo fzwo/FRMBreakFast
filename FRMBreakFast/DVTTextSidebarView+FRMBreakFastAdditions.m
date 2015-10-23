@@ -7,13 +7,25 @@
 //
 
 #import "DVTTextSidebarView+FRMBreakFastAdditions.h"
+#import "FRMRuntimeHelpers.h"
 
 @implementation DVTTextSidebarView (FRMBreakFastAdditions)
 
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        MethodSwizzle(self,
+                      @selector(mouseDown:),
+                      @selector(frm_mouseDown:));
+    });
+}
 
-- (void)mouseDown:(NSEvent *)event
+
+- (void)frm_mouseDown:(NSEvent *)event
 {
     [self logEvent:event];
+    [self frm_mouseDown:event];
 }
 
 
