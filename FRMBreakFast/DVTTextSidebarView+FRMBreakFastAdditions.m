@@ -25,8 +25,14 @@
 - (void)frm_mouseDown:(NSEvent *)event
 {
     [self logEvent:event];
-    id clickedAnnotation = [self _clickedAnnotation:event];
-    NSLog(@"FRMBreakFast: Clicked Annotation %@ (Class %@)", clickedAnnotation, [clickedAnnotation class]);
+    DVTAnnotation *clickedAnnotation = [self _clickedAnnotation:event];
+    NSLog(@"FRMBreakFast: Clicked Annotation %@\nrepresentedObject %@", clickedAnnotation, [clickedAnnotation representedObject]);
+    if (clickedAnnotation) {
+        if ([clickedAnnotation.representedObject isKindOfClass:[IDEBreakpoint class]]) {
+            IDEBreakpoint *breakpoint = clickedAnnotation.representedObject;
+            [self logBreakpoint:breakpoint];
+        }
+    }
     
     [self frm_mouseDown:event];
 }
@@ -47,6 +53,11 @@
           flags & NSControlKeyMask,
           shiftKeyPressed,
           flags);
+}
+
+- (void)logBreakpoint:(IDEBreakpoint *)breakpoint
+{
+    NSLog(@"%@ continueAfterRunningActions: %@, actions: %@", breakpoint.debugDescription, breakpoint.continueAfterRunningActions ? @"YES" : @"NO", breakpoint.actions);
 }
 
 @end

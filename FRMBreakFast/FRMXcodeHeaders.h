@@ -14,6 +14,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@interface IDEBreakpoint : NSObject
+@property BOOL continueAfterRunningActions; // @synthesize continueAfterRunningActions=_continueAfterRunningActions;
+@property(copy) NSArray *actions; // @dynamic actions;
+@end
+
+@interface DVTAnnotation : NSObject
+@property (strong) id representedObject;
+@end
+
 @interface DVTTextSidebarView : NSRulerView
-- (id)_clickedAnnotation:(NSEvent *)event;
+- (DVTAnnotation *)_clickedAnnotation:(NSEvent *)event;
 @end
