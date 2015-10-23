@@ -18,6 +18,9 @@
         MethodSwizzle(self,
                       @selector(mouseDown:),
                       @selector(frm_mouseDown:));
+        MethodSwizzle(self,
+                      @selector(_drawSidebarMarkersForAnnotations:atIndexes:textView:getParaRectBlock:),
+                      @selector(frm_drawSidebarMarkersForAnnotations:atIndexes:textView:getParaRectBlock:));
     });
 }
 
@@ -79,5 +82,71 @@
 {
     NSLog(@"%@ continueAfterRunningActions: %@, actions: %@", breakpoint.debugDescription, breakpoint.continueAfterRunningActions ? @"YES" : @"NO", breakpoint.actions);
 }
+
+
+- (void)frm_drawSidebarMarkersForAnnotations:(NSArray *)annotations
+                                   atIndexes:(NSIndexSet *)indexes
+                                    textView:(id)textView
+                            getParaRectBlock:(id)getParagraphRect
+{
+    NSMutableIndexSet *unhandledAnnotationsIndexes = [NSMutableIndexSet indexSet];
+    NSUInteger i = 0;
+    for (DVTAnnotation *annotation in annotations) {
+        id representedObject = annotation.representedObject;
+        
+        //handle ordinary (non-symbolic, non-exception) breakpoints only
+        if ([representedObject isKindOfClass:IDEFileBreakpoint.class]) {
+            DBGBreakpointAnnotation *breakpointAnnotation = (DBGBreakpointAnnotation *)annotation;
+            DVTTextDocumentLocation *location = breakpointAnnotation.location;
+            long long startingLineNumber = location.startingLineNumber + 1;
+            CGRect paragraphRect;
+            CGRect firstLineRect;
+            [self getParagraphRect:&paragraphRect firstLineRect:&firstLineRect forLineNumber:startingLineNumber];
+            //draw
+            NSBezierPath *markerPath = [self markerPathForBreakpointAnnotation:breakpointAnnotation inRect:firstLineRect];
+            NSColor *fillColor = [NSColor orangeColor];
+            NSColor *strokeColor = [NSColor redColor];
+            [fillColor setFill];
+            [strokeColor setStroke];
+            [markerPath fill];
+            [markerPath stroke];
+        }
+        else {
+            [unhandledAnnotationsIndexes addIndex:i];
+        }
+        i++;
+    }
+    //let original implementation handle all unhandled annotations
+    [self frm_drawSidebarMarkersForAnnotations:annotations atIndexes:unhandledAnnotationsIndexes textView:textView getParaRectBlock:getParagraphRect];
+
+    //ensure that line numbers are drawn on top of sidebar annotations
+    [self _drawLineNumbersInSidebarRect:[self sidebarRect] foldedIndexes:nil count:0 linesToInvert:nil linesToReplace:nil getParaRectBlock:getParagraphRect];
+}
+
+
+- (NSBezierPath *)markerPathForBreakpointAnnotation:(DBGBreakpointAnnotation *)annotation
+                                             inRect:(CGRect)rect
+{
+    IDEFileBreakpoint *breakpoint = (IDEFileBreakpoint *)[annotation representedObject];
+    
+    CGFloat left = rect.origin.x + 0.5;
+    CGFloat right = NSMaxX(rect) + 0.5;
+    CGFloat top = rect.origin.y + 0.5;
+    CGFloat bottom = NSMaxY(rect) - 0.5;
+    CGFloat halfHeight = floor(rect.size.height / 2.0) + 0.5;
+    CGFloat arrowheadWidth = ceil(halfHeight/4.0*3.0);
+    NSBezierPath *markerPath = [NSBezierPath bezierPath];
+    [markerPath moveToPoint: NSMakePoint(left, top)];
+    if (breakpoint.continueAfterRunningActions) {
+        [markerPath lineToPoint: NSMakePoint(left + arrowheadWidth, NSMaxY(rect) - halfHeight)];
+    }
+    [markerPath lineToPoint: NSMakePoint(left, bottom)];
+    [markerPath lineToPoint: NSMakePoint(right, bottom)];
+    [markerPath lineToPoint: NSMakePoint(right + arrowheadWidth, NSMaxY(rect) - halfHeight)];
+    [markerPath lineToPoint: NSMakePoint(right, top)];
+    [markerPath lineToPoint: NSMakePoint(left, top)];
+    return markerPath;
+}
+
 
 @end

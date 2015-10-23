@@ -15,22 +15,57 @@
 #import <Cocoa/Cocoa.h>
 
 @interface IDEBreakpoint : NSObject
-@property BOOL continueAfterRunningActions; // @synthesize continueAfterRunningActions=_continueAfterRunningActions;
-@property(copy) NSArray *actions; // @dynamic actions;
+@property BOOL continueAfterRunningActions;
+@property(copy) NSArray *actions;
+@end
+
+@interface IDEFileBreakpoint : IDEBreakpoint
+@end
+
+@interface DVTDocumentLocation : NSObject
+@end
+
+@interface DVTTextDocumentLocation : DVTDocumentLocation
+@property(readonly) long long startingLineNumber;
 @end
 
 @interface DVTAnnotation : NSObject
 @property (strong) id representedObject;
 @end
 
+@interface DVTTextAnnotation : DVTAnnotation
+@property(retain, nonatomic) DVTTextDocumentLocation *location;
+@property(readonly) NSRange paragraphRange;
+@end
+
+@interface DBGBreakpointAnnotation : DVTTextAnnotation
+@end
+
 @interface DVTTextSidebarView : NSRulerView
+@property double foldbarWidth;
 - (DVTAnnotation *)_clickedAnnotation:(NSEvent *)event;
+
+- (void)_drawSidebarMarkersForAnnotations:(NSArray *)annotations
+                                atIndexes:(NSIndexSet *)indexes
+                                 textView:(id)textView
+                         getParaRectBlock:(id)getParaRect;
+- (void)_drawLineNumbersInSidebarRect:(CGRect)sidebarRect
+                        foldedIndexes:(unsigned long long *)foldedIndexes
+                                count:(unsigned long long)count
+                        linesToInvert:(id)linesToInvert
+                       linesToReplace:(id)linesToReplace
+                     getParaRectBlock:(id)getParaRect;
 - (DVTAnnotation *)annotationAtSidebarPoint:(struct CGPoint)point;
+- (void)getParagraphRect:(struct CGRect *)paragraphRect
+           firstLineRect:(struct CGRect *)firstLineRect
+           forLineNumber:(unsigned long long)lineNumber;
+- (unsigned long long)lineNumberForPoint:(struct CGPoint)arg1;
+- (struct CGRect)sidebarRect;
 @end
 
 @interface IDEBreakpointAction : NSObject
 @end
 
 @interface IDELogBreakpointAction : IDEBreakpointAction
-@property(copy) NSString *message; // @synthesize message=_message;
+@property(copy) NSString *message;
 @end
