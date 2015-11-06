@@ -268,8 +268,9 @@
 				DSTROOT = "$(HOME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+					"\"$(DEVELOPER_DIR)/../SharedFrameworks\"",
+					"\"$(DEVELOPER_DIR)/../OtherFrameworks\"",
+					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
@@ -288,8 +289,9 @@
 				DSTROOT = "$(HOME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
+					"\"$(DEVELOPER_DIR)/../SharedFrameworks\"",
+					"\"$(DEVELOPER_DIR)/../OtherFrameworks\"",
+					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
