@@ -273,7 +273,7 @@
 					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Developer/Shared/Xcode";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -294,7 +294,7 @@
 					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Developer/Shared/Xcode";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
