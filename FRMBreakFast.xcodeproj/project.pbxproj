@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F28CB181BDA156400AC1EFE /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */; settings = {ASSET_TAGS = (); }; };
-		1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB191BDA200500AC1EFE /* IDEKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; settings = {ASSET_TAGS = (); }; };
+		1F28CB181BDA156400AC1EFE /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */; };
+		1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB191BDA200500AC1EFE /* IDEKit.framework */; };
+		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; };
+		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; };
 		1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */; };
 		1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */; };
 		1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */; };
-		1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BEA1BD8F3EB00C252E3 /* FRMRuntimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */; settings = {ASSET_TAGS = (); }; };
+		1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */; };
+		1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */; };
+		1F8A7BEA1BD8F3EB00C252E3 /* FRMRuntimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,7 +273,7 @@
 					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Developer/Shared/Xcode";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -294,7 +294,7 @@
 					"\"$(DEVELOPER_DIR)/../Frameworks\"",
 				);
 				INFOPLIST_FILE = FRMBreakFast/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Developer/Shared/Xcode";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = de.friedrichmarkgraf.FRMBreakFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
