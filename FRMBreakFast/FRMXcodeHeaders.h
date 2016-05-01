@@ -14,9 +14,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @interface IDEBreakpointManager : NSObject
 @property(nonatomic) BOOL breakpointsActivated;
 @end
+
 
 @interface IDEBreakpoint : NSObject
 @property(retain) id /*<IDEInternalBreakpointDelegate>*/ delegate;
@@ -25,53 +27,67 @@
 @property(nonatomic) BOOL shouldBeEnabled;
 @end
 
+
 @interface IDEFileBreakpoint : IDEBreakpoint
 @end
 
+
 @interface DVTDocumentLocation : NSObject
 @end
+
 
 @interface DVTTextDocumentLocation : DVTDocumentLocation
 @property(readonly) long long startingLineNumber;
 @end
 
+
 @interface DVTAnnotation : NSObject
 @property (strong) id representedObject;
 @end
 
-@interface DVTTextAnnotation : DVTAnnotation
+
+@interface DVTTextAnnotation : DVTAnnotation {
+    NSImage *_sidebarMarkerImage;
+}
 @property(retain, nonatomic) DVTTextDocumentLocation *location;
 @property(readonly) NSRange paragraphRange;
+@property(retain, nonatomic) NSImage *sidebarMarkerImage;
 @end
+
 
 @interface DBGBreakpointAnnotation : DVTTextAnnotation
+- (id)_icon;
+- (id)_iconForRect:(struct CGRect)rect;
 @end
 
+
 @interface DVTTextSidebarView : NSRulerView
-@property double foldbarWidth;
 - (DVTAnnotation *)_clickedAnnotation:(NSEvent *)event;
-typedef void(^getParaRectBlock)(unsigned long long, CGRect *, CGRect *, DVTTextAnnotation *);
-- (void)_drawSidebarMarkersForAnnotations:(NSArray *)annotations
-                                atIndexes:(NSIndexSet *)indexes
-                                 textView:(id)textView
-                         getParaRectBlock:(getParaRectBlock)getParaRect;
-- (void)_drawLineNumbersInSidebarRect:(CGRect)sidebarRect
-                        foldedIndexes:(unsigned long long *)foldedIndexes
-                                count:(unsigned long long)count
-                        linesToInvert:(id)linesToInvert
-                       linesToReplace:(id)linesToReplace
-                     getParaRectBlock:(getParaRectBlock)getParaRect;
 - (DVTAnnotation *)annotationAtSidebarPoint:(struct CGPoint)point;
-- (void)getParagraphRect:(struct CGRect *)paragraphRect
-           firstLineRect:(struct CGRect *)firstLineRect
-           forLineNumber:(unsigned long long)lineNumber;
-- (unsigned long long)lineNumberForPoint:(struct CGPoint)arg1;
-- (struct CGRect)sidebarRect;
 @end
+
 
 @interface IDEBreakpointAction : NSObject
 @end
 
+
 @interface IDELogBreakpointAction : IDEBreakpointAction
 @property(copy) NSString *message;
+@end
+
+
+@interface IDEBreakpointIcon : NSObject
+- (id)cachedImageForBreakpointsActivated:(BOOL)arg1 breakpointEnabled:(BOOL)arg2 pressed:(BOOL)arg3;
+- (id)initWithSize:(struct CGSize)arg1 includeBottomHighlight:(BOOL)arg2 useDarkerBorderColor:(BOOL)arg3;
+
+
+@end
+
+
+@interface DBGBreakpointButton : NSButton
+@property(retain, nonatomic) NSNumber *breakpointEnabled;
+@property(retain, nonatomic) NSNumber *breakpointsActivated;
+@property __weak IDEBreakpoint *breakpoint;
+- (void)_updateImage;
+- (id)initWithBreakpointIcon:(id)arg1;
 @end

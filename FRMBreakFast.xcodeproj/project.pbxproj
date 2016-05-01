@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F28CB181BDA156400AC1EFE /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */; settings = {ASSET_TAGS = (); }; };
-		1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB191BDA200500AC1EFE /* IDEKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; settings = {ASSET_TAGS = (); }; };
+		1F28CB181BDA156400AC1EFE /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */; };
+		1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F28CB191BDA200500AC1EFE /* IDEKit.framework */; };
+		1F8A7BC91BD7A13600C252E3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BC81BD7A13600C252E3 /* AppKit.framework */; };
+		1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BCA1BD7A13600C252E3 /* Foundation.framework */; };
 		1F8A7BCF1BD7A13600C252E3 /* FRMBreakFast.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A7BCE1BD7A13600C252E3 /* FRMBreakFast.xcscheme */; };
 		1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */; };
 		1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BD41BD7A13600C252E3 /* NSObject_Extension.m */; };
-		1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */; settings = {ASSET_TAGS = (); }; };
-		1F8A7BEA1BD8F3EB00C252E3 /* FRMRuntimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */; settings = {ASSET_TAGS = (); }; };
+		1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */; };
+		1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */; };
+		1F8A7BEA1BD8F3EB00C252E3 /* FRMRuntimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */; };
+		1F9A6A471CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A6A461CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.m */; };
+		1F9D6E991CD502730088A5BC /* DebuggerUI in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9D6E981CD502730088A5BC /* DebuggerUI */; };
+		1FA4F0921CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4F0911CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.m */; };
+		1FA4F0951CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4F0941CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,13 @@
 		1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../SharedFrameworks/DVTKit.framework; sourceTree = DEVELOPER_DIR; };
 		1F8A7BE81BD8F3EB00C252E3 /* FRMRuntimeHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMRuntimeHelpers.h; sourceTree = "<group>"; };
 		1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMRuntimeHelpers.m; sourceTree = "<group>"; };
+		1F9A6A451CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBGBreakpointAnnotation+FRMBreakFastAdditions.h"; sourceTree = "<group>"; };
+		1F9A6A461CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBGBreakpointAnnotation+FRMBreakFastAdditions.m"; sourceTree = "<group>"; };
+		1F9D6E981CD502730088A5BC /* DebuggerUI */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = DebuggerUI; path = ../PlugIns/DebuggerUI.ideplugin/Contents/MacOS/DebuggerUI; sourceTree = DEVELOPER_DIR; };
+		1FA4F0901CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBGBreakpointButton+FRMBreakFastAdditions.h"; sourceTree = "<group>"; };
+		1FA4F0911CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBGBreakpointButton+FRMBreakFastAdditions.m"; sourceTree = "<group>"; };
+		1FA4F0931CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEBreakpointIcon+FRMBreakFastAdditions.h"; sourceTree = "<group>"; };
+		1FA4F0941CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDEBreakpointIcon+FRMBreakFastAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +60,7 @@
 				1F8A7BCB1BD7A13600C252E3 /* Foundation.framework in Frameworks */,
 				1F8A7BE11BD8D45600C252E3 /* DVTKit.framework in Frameworks */,
 				1F28CB1A1BDA200500AC1EFE /* IDEKit.framework in Frameworks */,
+				1F9D6E991CD502730088A5BC /* DebuggerUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,7 @@
 		1F8A7BC71BD7A13600C252E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F9D6E981CD502730088A5BC /* DebuggerUI */,
 				1F28CB191BDA200500AC1EFE /* IDEKit.framework */,
 				1F28CB171BDA156400AC1EFE /* IDEFoundation.framework */,
 				1F8A7BE01BD8D45600C252E3 /* DVTKit.framework */,
@@ -91,6 +104,12 @@
 				1F8A7BD11BD7A13600C252E3 /* FRMBreakFast.m */,
 				1F8A7BDC1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.h */,
 				1F8A7BDD1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m */,
+				1F9A6A451CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.h */,
+				1F9A6A461CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.m */,
+				1FA4F0901CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.h */,
+				1FA4F0911CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.m */,
+				1FA4F0931CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.h */,
+				1FA4F0941CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.m */,
 				1F8A7BE81BD8F3EB00C252E3 /* FRMRuntimeHelpers.h */,
 				1F8A7BE91BD8F3EB00C252E3 /* FRMRuntimeHelpers.m */,
 				1F8A7BDF1BD8D1F600C252E3 /* FRMXcodeHeaders.h */,
@@ -177,9 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9A6A471CD4FC5F00E3957C /* DBGBreakpointAnnotation+FRMBreakFastAdditions.m in Sources */,
 				1F8A7BD21BD7A13600C252E3 /* FRMBreakFast.m in Sources */,
 				1F8A7BD51BD7A13600C252E3 /* NSObject_Extension.m in Sources */,
+				1FA4F0951CD615C500A43F8D /* IDEBreakpointIcon+FRMBreakFastAdditions.m in Sources */,
 				1F8A7BEA1BD8F3EB00C252E3 /* FRMRuntimeHelpers.m in Sources */,
+				1FA4F0921CD5FF1B00A43F8D /* DBGBreakpointButton+FRMBreakFastAdditions.m in Sources */,
 				1F8A7BDE1BD8D1B800C252E3 /* DVTTextSidebarView+FRMBreakFastAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
